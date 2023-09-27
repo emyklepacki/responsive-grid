@@ -158,30 +158,27 @@ first div in the grid  and place it in the grid. */
       .method,
       .clients,
       .contact {
-        grid-column: 2 / span 1; /* Begin in the 2nd column and span one column */
+        grid-column: 2 / span 1;
       }
 
       .about-image,
       .method-image,
       .clients-image,
       .contact-image {
-        grid-column: 1 / span 3; /* Cover all columns */
-        max-height: 600px; /* Maximum height of 600px */
-        overflow: hidden; /* Hide content that goes outside their grid cell */
+        grid-column: 1 / span 3; 
+        max-height: 600px; 
+        overflow: hidden; 
       }
 
       .about {
         grid-row: 2; 
       }
-      
       .method {
         grid-row: 3; 
       }
-      
       .clients {
         grid-row: 4; 
       }
-
       .contact {
         grid-row: 5; 
       }

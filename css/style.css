@@ -107,10 +107,9 @@ footer{
 
 /* Step 1: Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
-nav:hover:focus {
+nav:hover, nav:focus {
   text-decoration: underline;
 }
-
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 
@@ -140,13 +139,13 @@ nav:hover:focus {
 
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
-  .container:first-child {
-    grid-column: 1 / span 3; 
+  .container > *:first-child {
+    grid-column: 1 / -1; 
     min-height: 500px; 
-    background-image: url('images/header.jpg');
+    background-image: url('../images/header.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed; 
-    background-size: cover; 
+    background-size: cover;
   }
 
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
@@ -159,15 +158,17 @@ first div in the grid  and place it in the grid. */
       .clients,
       .contact {
         grid-column: 2 / span 1;
+        grid-row: 2;
       }
 
       .about-image,
       .method-image,
       .clients-image,
       .contact-image {
-        grid-column: 1 / span 3; 
+        grid-column: 1 / -1; 
         max-height: 600px; 
         overflow: hidden; 
+        grid-row: auto;
       }
 
       .about {
@@ -193,14 +194,12 @@ first div in the grid  and place it in the grid. */
   }
 
 /* Add your media query here */
-  @media (min-width: 800px) {
+  @media screen and (min-width: 800px) {
     /* Step 9: Write the selector/rule property to style the nav element */
     .nav {
       position: absolute;
-      top: 30px;
-      right: 30px;
-      bottom: 30px;
-      left: 0;
+      text-align: right;
+      padding: 30px 0px;
     }
     /* Step 10: Write the selector/rule property to update the .container class */
     .container {
@@ -211,8 +210,8 @@ first div in the grid  and place it in the grid. */
 
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
     .about,
-    .clients,
     .method-image,
+    .clients,
     .contact-image {
       grid-column: 3 / span 2;
     }
@@ -223,5 +222,6 @@ first div in the grid  and place it in the grid. */
     .clients-image {
       grid-column: 2 / span 2;
     }
+    
   }
   
